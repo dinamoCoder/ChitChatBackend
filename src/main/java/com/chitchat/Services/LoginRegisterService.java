@@ -44,7 +44,7 @@ public class LoginRegisterService {
             // then we will return the RegisterResponse
             createUser.setSuccess(true);
             registerResponse = _modelMapperDto.map(user, RegisterResponse.class);
-            registerResponse.Message = "Registered Successfully!!!!!";
+            registerResponse.setMessage("Registered Successfully!!!!!");
             return registerResponse;
         }
         return registerResponse;

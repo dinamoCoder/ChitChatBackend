@@ -32,12 +32,12 @@ public class RegisterController {
         if (registerUser != null) {
             if(_loginRegisterService.CheckUser(registerUser.UserName)!=null){
                 var registerResponse = new RegisterResponse();
-                registerResponse.Message ="User Already Registered";
+                registerResponse.setMessage("User Already Registered");
                 return new ResponseEntity<RegisterResponse>(registerResponse, HttpStatus.BAD_REQUEST);
             }
            RegisterResponse createUser = _loginRegisterService.RegisterUser(registerUser);
            // set it  role by deault
-           if(createUser.Success){
+           if(createUser.isSuccess()){
                return new ResponseEntity<RegisterResponse>(createUser, HttpStatus.OK);
            }
            else{

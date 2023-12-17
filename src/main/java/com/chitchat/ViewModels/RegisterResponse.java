@@ -11,13 +11,13 @@ import lombok.Setter;
 @JsonSerialize
 public class RegisterResponse {
     @JsonProperty("email")
-    public String Email;
+    private String Email;
     @JsonProperty("userName")
-    public String UserName;
+    private String UserName;
     @JsonProperty("success")
-    public boolean Success;
+    private boolean Success;
     @JsonProperty("message")
-    public String Message;
+    private String Message;
 
     public RegisterResponse() {
         this.Email = "";
@@ -25,4 +25,6 @@ public class RegisterResponse {
         this.Success = false;
         this.Message = "Please Enter the Valid Input";
     }
+
+
 }
