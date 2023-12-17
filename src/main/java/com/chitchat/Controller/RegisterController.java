@@ -25,7 +25,9 @@ public class RegisterController {
     }
     @PostMapping("/register")
     public ResponseEntity<RegisterResponse> RegisterUser(@RequestBody RegisterRequest register) {
-         var registerUser = this._modelMapper.map(register, User.class);
+         System.out.println(register);
+        var registerUser = this._modelMapper.map(register, User.class);
+         System.out.println(registerUser);
          System.out.println(registerUser.UserName);
         if (registerUser != null) {
             if(_loginRegisterService.CheckUser(registerUser.UserName)!=null){
