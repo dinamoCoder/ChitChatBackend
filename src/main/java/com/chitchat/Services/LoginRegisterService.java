@@ -42,9 +42,9 @@ public class LoginRegisterService {
         var createUser = _loginRegisterRepository.save(user);
         if (createUser != null) {
             // then we will return the RegisterResponse
-            createUser.setSuccess(true);
+            createUser.Success =true;
             registerResponse = _modelMapperDto.map(user, RegisterResponse.class);
-            registerResponse.setMessage("Registered Successfully!!!!!");
+            registerResponse.Message = "Registered Successfully!!!!!";
             return registerResponse;
         }
         return registerResponse;
