@@ -18,7 +18,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.modelmapper:modelmapper' // Use the latest version available
+	implementation 'org.modelmapper:modelmapper:2.1.1' // Use the latest version available
 	implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // Check for the latest version
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
