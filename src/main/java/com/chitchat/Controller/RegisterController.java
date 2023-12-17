@@ -26,11 +26,11 @@ public class RegisterController {
     @PostMapping("/register")
     public ResponseEntity<RegisterResponse> RegisterUser(@RequestBody RegisterRequest register) {
          var registerUser = this._modelMapper.map(register, User.class);
-         System.out.println(registerUser.UserName);
+         System.out.println(registerUser.userName);
         if (registerUser != null) {
-            if(_loginRegisterService.CheckUser(registerUser.UserName)!=null){
+            if(_loginRegisterService.CheckUser(registerUser.userName)!=null){
                 var registerResponse = new RegisterResponse();
-                registerResponse.setMessage("User Already Registered");
+                registerResponse.Message ="User Already Registered";
                 return new ResponseEntity<RegisterResponse>(registerResponse, HttpStatus.BAD_REQUEST);
             }
            RegisterResponse createUser = _loginRegisterService.RegisterUser(registerUser);

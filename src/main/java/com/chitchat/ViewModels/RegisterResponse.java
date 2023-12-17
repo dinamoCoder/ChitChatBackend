@@ -1,16 +1,22 @@
 package com.chitchat.ViewModels;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@JsonSerialize
 public class RegisterResponse {
+    @JsonProperty("email")
     public String Email;
+    @JsonProperty("userName")
     public String UserName;
+    @JsonProperty("success")
     public boolean Success;
+    @JsonProperty("message")
     public String Message;
 
     public RegisterResponse() {
@@ -19,21 +25,4 @@ public class RegisterResponse {
         this.Success = false;
         this.Message = "Please Enter the Valid Input";
     }
-
-    public void setEmail(String email) {
-        this.Email = email;
-    }
-
-    public void setUserName(String userName) {
-        this.UserName = userName;
-    }
-
-    public void setSuccess(boolean success) {
-        this.Success = success;
-    }
-
-    public void setMessage(String message) {
-        this.Message = message;
-    }
-
 }
