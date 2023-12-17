@@ -1,8 +1,6 @@
 package com.chitchat.Models;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -11,12 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.chitchat.Models.Enum.Role;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Document("Users")
@@ -43,51 +37,51 @@ public class User implements UserDetails {
     @Field("refreshTokenExpireDate")
     public java.util.Date RefreshTokenExpireDate;
 
-    // public void setLogo(String logo) {
-    //     this.Logo = logo;
-    // }
+    public void setLogo(String logo) {
+        this.Logo = logo;
+    }
 
-    // public void setEmail(String email) {
-    //     this.Email = email;
-    // }
+    public void setEmail(String email) {
+        this.Email = email;
+    }
 
-    // public void setUserName(String userName) {
-    //     this.UserName = userName;
-    // }
+    public void setUserName(String userName) {
+        this.UserName = userName;
+    }
 
-    // public void setPassword(String password) {
-    //     this.Password = password;
-    // }
+    public void setPassword(String password) {
+        this.Password = password;
+    }
 
-    // public void setNumber(String number) {
-    //     this.Number = number;
-    // }
-    //     public void setSuccess(boolean success){
-    //     this.Success = success;
-    // }
+    public void setNumber(String number) {
+        this.Number = number;
+    }
+        public void setSuccess(boolean success){
+        this.Success = success;
+    }
 
-    //    public String getLogo() {
-    //     return this.Logo;
-    // }
+       public String getLogo() {
+        return this.Logo;
+    }
 
-    // public String getEmail() {
-    //     return this.Email;
-    // }
+    public String getEmail() {
+        return this.Email;
+    }
 
-    // public String getUserName() {
-    //     return this.UserName;
-    // }
+    public String getUserName() {
+        return this.UserName;
+    }
 
     public String getPassword() {
         return this.Password;
     }
 
-    // public String getNumber() {
-    //     return this.Number;
-    // }
-    // public boolean getSuccess(){
-    //     return this.Success;
-    // }
+    public String getNumber() {
+        return this.Number;
+    }
+    public boolean getSuccess(){
+        return this.Success;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
