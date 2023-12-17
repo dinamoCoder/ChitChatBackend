@@ -78,9 +78,9 @@ public class User implements UserDetails {
     //     return this.UserName;
     // }
 
-    // public String getPassword() {
-    //     return this.Password;
-    // }
+    public String getPassword() {
+        return this.Password;
+    }
 
     // public String getNumber() {
     //     return this.Number;
