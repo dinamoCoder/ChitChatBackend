@@ -30,7 +30,7 @@ public class User implements UserDetails {
     @Field("email")
     public String Email;
     @Field("userName")
-    public String userName;
+    public String UserName;
     @Field("password")
     public String Password;
     @Field("number")
@@ -96,7 +96,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.userName;
+        return this.UserName;
     }
 
     @Override
