@@ -62,8 +62,9 @@ public class LoginRegisterService {
         var checkUser = CheckUser(login.UserName);
         if(checkUser!=null){
             // then we will check its password and other work so on
-            var encodedPassword = _passwordEncoder.encode(login.Password); 
-            var checkPassword = _passwordEncoder.matches(login.Password,encodedPassword);
+        
+            //var encodedPassword = _passwordEncoder.encode(login.Password); 
+            var checkPassword = _passwordEncoder.matches(login.Password,checkUser.Password);
             if(checkPassword){
                 HashMap<String,Object> mapExtraClaims = new HashMap<String,Object>();
                 mapExtraClaims.put("userId", checkUser.userId.toString());
